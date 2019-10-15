@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &910919066353089282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910919066353089284}
+  - component: {fileID: 910919066353089283}
+  m_Layer: 0
+  m_Name: EnemyArmy
+  m_TagString: EnemyArmyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910919066353089284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910919066353089282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.67, y: 4.19, z: -8.554571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910919066353089283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910919066353089282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74acdcb4cd52794f9d145c9daf36062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesPerRow: 6
+  numberOfRows: 5
+  horizontalSpacing: 1.8
+  verticalSpacing: 1.3
+  enemy1: {fileID: 650585248567290340, guid: 9e09795e7a7109542bd5ccdc1207bea8, type: 3}
+  movementTimeInterval: 0.2
+  horizontalMoveDistance: 0.5
+  verticalMoveDistance: 1
+  moveRightSwitchPending: 0
+  shieldSpawnPercentage: 1
