@@ -52,4 +52,4 @@ MonoBehaviour:
   horizontalMoveDistance: 0.5
   verticalMoveDistance: 1
   moveRightSwitchPending: 0
-  shieldSpawnPercentage: 1
+  shieldSpawnPercentage: 0

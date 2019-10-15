@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     private BoxCollider2D bc;
 
     private EnemyArmyManager enemyArmyManager;
-    private GameManager gameManager;
 
     public GameObject enemyShield;
     public bool hasShield;
@@ -29,7 +28,6 @@ public class Enemy : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
 
         enemyArmyManager = GetComponentInParent<EnemyArmyManager>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         timeUntilNextShot = GenerateShotTime();
     }
@@ -71,7 +69,7 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Boundary"))
             enemyArmyManager.moveRightSwitchPending = true;
         else if (col.gameObject.layer == LayerMask.NameToLayer("LowerBoundary"))
-            gameManager.GameOver();
+            GameManager.Instance.GameOver();
 
     }
 
@@ -81,7 +79,7 @@ public class Enemy : MonoBehaviour
             hasShield = false;
         }
         else {
-            gameManager.DecreaseEnemyCount();
+            GameManager.Instance.currentEnemyCount--;
             Destroy(gameObject);
             
         }

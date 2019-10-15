@@ -21,15 +21,10 @@ public class EnemyArmyManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float shieldSpawnPercentage = 0.5f;
 
-    
-    private GameManager gameManager;
-
-
     // Start is called before the first frame update
     void Start()
     {
         moveRight = true;
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         previousMovementTimeInterval = movementTimeInterval;
 
         SpawnEnemies();
@@ -51,7 +46,7 @@ public class EnemyArmyManager : MonoBehaviour
                     iEnemy.GetComponent<Enemy>().hasShield = true;
                 }
                 iEnemy.GetComponent<Enemy>().Init();
-                gameManager.IncreaseEnemyCount();
+                GameManager.Instance.currentEnemyCount++;
             }
         }
     }

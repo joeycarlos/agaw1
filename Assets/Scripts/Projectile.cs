@@ -10,14 +10,10 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private GameManager gameManager;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         if (upDirection == true) rb.velocity = new Vector2(0, speed);
         else rb.velocity = new Vector2(0, -speed);
