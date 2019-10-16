@@ -26,6 +26,9 @@ public class Projectile : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
             col.gameObject.GetComponent<Enemy>().TakeDamage();
             Destroy(gameObject);
+        } else if (col.gameObject.layer == LayerMask.NameToLayer("EnemyBoss")) {
+            col.gameObject.GetComponent<EnemyBoss>().TakeDamage();
+            Destroy(gameObject);
         }
     }
 }

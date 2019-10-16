@@ -67,7 +67,7 @@ public class EnemyArmyManager : MonoBehaviour
     }
 
     public void StartBehaviour() {
-        InvokeRepeating("Move", movementTimeInterval, movementTimeInterval);
+        InvokeRepeating("Move", 0, movementTimeInterval);
     }
 
     void Update() {
@@ -131,5 +131,9 @@ public class EnemyArmyManager : MonoBehaviour
 
         maxShotTimeInterval *= aggressionShotRateMultiplier;
         Mathf.Clamp(maxShotTimeInterval, 1.0f, 20.0f);
+    }
+
+    public void ClearInvokes() {
+        CancelInvoke("Move");
     }
 }

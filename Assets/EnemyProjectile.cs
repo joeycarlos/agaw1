@@ -30,8 +30,5 @@ public class EnemyProjectile : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             GameManager.Instance.GameOver();
         }
-
-
-
     }
 }

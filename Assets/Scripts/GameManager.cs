@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void LevelComplete() {
+        EnemyArmyManager.Instance.ClearInvokes();
         levelsCompleted++;
         levelHasStarted = false;
         if (levelsCompleted < SceneManager.sceneCountInBuildSettings - 5) {
