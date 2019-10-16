@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyBoss : MonoBehaviour
 {
+    public GameObject movementPickup;
+    public GameObject attackPickup;
+
     public float speed = 3.0f;
     public bool leftToRight { get; set; }
 
@@ -35,6 +38,11 @@ public class EnemyBoss : MonoBehaviour
 
     public void TakeDamage() {
         EnemyBossSpawner.Instance.currentlySpawning = true;
+        if (Random.value > 0.5f) {
+            Instantiate(movementPickup, transform.position, Quaternion.identity);
+        } else {
+            Instantiate(attackPickup, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

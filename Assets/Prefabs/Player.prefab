@@ -147,8 +147,8 @@ MonoBehaviour:
   horizontalDistanceLimit: 9
   projectile: {fileID: 1691363864066972858, guid: 9c2aa8c9741161c41b3223857d244959,
     type: 3}
-  shotInterval: 0.3
-  projectileSpeed: 10
+  shotInterval: 0.4
+  projectileSpeed: 15
 --- !u!1001 &6090670343085315761
 PrefabInstance:
   m_ObjectHideFlags: 0
