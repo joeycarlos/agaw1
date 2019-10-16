@@ -46,7 +46,7 @@ public class EnemyArmyManager : MonoBehaviour
                     iEnemy.GetComponent<Enemy>().hasShield = true;
                 }
                 iEnemy.GetComponent<Enemy>().Init();
-                GameManager.Instance.currentEnemyCount++;
+                GameManager.Instance.currentEnemyCount = GameManager.Instance.currentEnemyCount + 1;
             }
         }
     }
