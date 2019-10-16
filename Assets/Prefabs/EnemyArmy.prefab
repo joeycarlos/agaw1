@@ -43,13 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74acdcb4cd52794f9d145c9daf36062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy1: {fileID: 650585248567290340, guid: 9e09795e7a7109542bd5ccdc1207bea8, type: 3}
   enemiesPerRow: 6
   numberOfRows: 5
   horizontalSpacing: 1.8
   verticalSpacing: 1.3
-  enemy1: {fileID: 650585248567290340, guid: 9e09795e7a7109542bd5ccdc1207bea8, type: 3}
   movementTimeInterval: 0.2
   horizontalMoveDistance: 0.5
   verticalMoveDistance: 1
+  numberOfShieldedRows: 2
   moveRightSwitchPending: 0
-  shieldSpawnPercentage: 0

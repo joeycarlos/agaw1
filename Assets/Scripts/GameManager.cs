@@ -45,35 +45,33 @@ public class GameManager : MonoBehaviour
         ProcessSceneLogic();
 
         activeScene = SceneManager.GetActiveScene().buildIndex;
-
-        // if (currentEnemyCount == 0 && activeScene >= (int)Scene.Level1) SceneManager.LoadScene((int)Scene.Win);
     }
 
     public void ProcessSceneLogic() {
         switch (activeScene) {
             case 0:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    SceneManager.LoadScene((int)Scene.Instructions);
+                    Instructions();
                 }
                 break;
             case 1:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    SceneManager.LoadScene((int)Scene.Level1);
+                    StartMainGame();
                 }
                 break;
             case 2:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    SceneManager.LoadScene((int)Scene.Level1);
+                    NextLevel();
                 }
                 break;
             case 3:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    SceneManager.LoadScene((int)Scene.Splash);
+                    RestartGame();
                 }
                 break;
             case 4:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    SceneManager.LoadScene((int)Scene.Splash);
+                    RestartGame();
                 }
                 break;
             default:
@@ -91,7 +89,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void LevelComplete() {
-        SceneManager.LoadScene((int)Scene.LevelComplete);
+        levelsCompleted++;
+        if (levelsCompleted < SceneManager.sceneCountInBuildSettings - 5) {
+            SceneManager.LoadScene((int)Scene.LevelComplete); 
+        } else {
+            Win();
+        }
+
+    }
+
+    public void NextLevel() {
+        SceneManager.LoadScene(levelsCompleted + 5);
     }
 
     public void StartMainGame() {
@@ -100,6 +108,11 @@ public class GameManager : MonoBehaviour
 
     public void Instructions() {
         SceneManager.LoadScene((int)Scene.Instructions);
+    }
+
+    public void RestartGame() {
+        SceneManager.LoadScene((int)Scene.Splash);
+        levelsCompleted = 0;
     }
 
 }
