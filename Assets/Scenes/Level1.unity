@@ -587,11 +587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8001890887215670470, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8001890887215670468, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -649,8 +644,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
         type: 3}
+      propertyPath: moveSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
+        type: 3}
+      propertyPath: shotInterval
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
+        type: 3}
       propertyPath: projectileSpeed
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc, type: 3}

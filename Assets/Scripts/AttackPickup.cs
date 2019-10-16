@@ -9,8 +9,8 @@ public class AttackPickup : Pickup
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
-            col.GetComponent<Player>().shotInterval -= shotIntervalDecrease;
-            col.GetComponent<Player>().projectileSpeed += projectileSpeedIncrease;
+            col.GetComponent<Player>().ShotInterval -= shotIntervalDecrease;
+            col.GetComponent<Player>().ProjectileSpeed += projectileSpeedIncrease;
             Destroy(gameObject);
         }
     }
