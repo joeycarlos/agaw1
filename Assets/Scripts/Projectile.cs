@@ -21,20 +21,11 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D col) {
 
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
             col.gameObject.GetComponent<Enemy>().TakeDamage();
             Destroy(gameObject);
         }
-            
-        
-
     }
 }

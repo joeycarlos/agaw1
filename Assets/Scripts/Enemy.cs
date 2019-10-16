@@ -16,13 +16,16 @@ public class Enemy : MonoBehaviour
     public bool hasShield;
     private GameObject iShield;
 
+    public bool isShooter;
+    private int enemyLayer;
+
     void Awake() {
-        hasShield = false;    
+        hasShield = false;
+        enemyLayer = LayerMask.GetMask("Enemy");
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         bc = GetComponent<BoxCollider2D>();
 
         timeUntilNextShot = GenerateShotTime();
@@ -35,38 +38,46 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         ProcessShooting();
+
+        isShooter = IsShooter();
     }
 
     float GenerateShotTime() {
         return Random.Range(minShotTimeInterval, maxShotTimeInterval);
     }
 
-    void ProcessShooting() {
+    bool IsShooter() {
+        Vector3 raycastOriginOffset = new Vector3(0, -(bc.size.y/2), 0);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + raycastOriginOffset, -Vector2.up, 20.0f, enemyLayer);
+        if (hit.collider != null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    void ProcessShooting() {
         timeUntilNextShot = timeUntilNextShot - Time.deltaTime;
 
         if (timeUntilNextShot <= 0) {
-            Shoot();
+            if (IsShooter()) Shoot();
             timeUntilNextShot = GenerateShotTime();
         }
-        
     }
 
     void Shoot() {
-        GameObject iProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        Vector3 shotOriginOffset = new Vector3(0, -(bc.size.y/2 + 0.5f), 0);
+        GameObject iProjectile = Instantiate(projectile, transform.position + shotOriginOffset, Quaternion.identity);
         iProjectile.GetComponent<EnemyProjectile>().speed = projectileSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-
         if (col.gameObject.layer == LayerMask.NameToLayer("Boundary"))
             EnemyArmyManager.Instance.moveRightSwitchPending = true;
         else if (col.gameObject.layer == LayerMask.NameToLayer("LowerBoundary"))
             GameManager.Instance.GameOver();
-
     }
 
     public void TakeDamage() {
@@ -77,8 +88,6 @@ public class Enemy : MonoBehaviour
         else {
             EnemyArmyManager.Instance.currentEnemyCount--;
             Destroy(gameObject);
-            
         }
-        
     }
 }

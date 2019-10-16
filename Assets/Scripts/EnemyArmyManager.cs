@@ -72,14 +72,6 @@ public class EnemyArmyManager : MonoBehaviour
                     iEnemy.GetComponent<Enemy>().hasShield = true;
                 iEnemy.GetComponent<Enemy>().Init();
                 currentEnemyCount++;
-
-                /*
-                if (Random.Range(0f, 1f) < shieldSpawnPercentage) {
-                    iEnemy.GetComponent<Enemy>().hasShield = true;
-                }
-                iEnemy.GetComponent<Enemy>().Init();
-                */
-
             }
         }
         enemiesHaveSpawned = true;
@@ -109,6 +101,5 @@ public class EnemyArmyManager : MonoBehaviour
         }
 
         transform.Translate(moveVector);
-
     }
 }

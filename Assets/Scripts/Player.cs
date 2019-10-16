@@ -67,7 +67,6 @@ public class Player : MonoBehaviour
     {
         GameObject iProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         iProjectile.GetComponent<Projectile>().speed = projectileSpeed;
-
     }
 
 }

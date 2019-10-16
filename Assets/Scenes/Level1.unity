@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 4084738654858743405, guid: c209d991dd19c484294358168b05f615,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6589087549931977507, guid: c209d991dd19c484294358168b05f615,
         type: 3}
       propertyPath: m_Color.r
@@ -280,6 +285,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: enemiesPerRow
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: numberOfRows
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: verticalSpacing
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: movementTimeInterval
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ecd8617aac41429bd62877f840120, type: 3}
@@ -429,6 +454,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 4084738654858743405, guid: c209d991dd19c484294358168b05f615,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6589087549931977507, guid: c209d991dd19c484294358168b05f615,
         type: 3}
       propertyPath: m_Color.r
@@ -462,6 +492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001890887215670470, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8001890887215670468, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
         type: 3}
