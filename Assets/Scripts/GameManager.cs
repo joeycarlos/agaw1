@@ -79,10 +79,6 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             default:
-                if (Input.GetKeyUp(KeyCode.Space)) {
-                    levelHasStarted = true;
-                    EnemyArmyManager.Instance.StartBehaviour();
-                }
                 break;
 
         }

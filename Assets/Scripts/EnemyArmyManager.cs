@@ -62,15 +62,20 @@ public class EnemyArmyManager : MonoBehaviour
         previousMovementTimeInterval = movementTimeInterval;
         currentEnemyCount = 0;
 
+        ClearInvokes();
         SpawnEnemies();
-        
     }
 
-    public void StartBehaviour() {
+    void StartBehaviour() {
         InvokeRepeating("Move", 0, movementTimeInterval);
     }
 
     void Update() {
+        if (Input.GetKeyUp(KeyCode.Space) && GameManager.Instance.levelHasStarted == false) {
+            GameManager.Instance.levelHasStarted = true;
+            StartBehaviour();
+        }
+
         if (enemiesHaveSpawned == true && currentEnemyCount == 0)
             GameManager.Instance.LevelComplete();
         if (enemiesHaveSpawned == true && currentEnemyCount == numEnemiesAtPreviousAggressionLevel - numKillsToIncreaseAggression)
