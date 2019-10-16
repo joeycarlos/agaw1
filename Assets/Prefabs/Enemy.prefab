@@ -146,7 +146,8 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 3
   minShotTimeInterval: 3
-  maxShotTimeInterval: 20
+  maxShotTimeInterval: 4
   enemyShield: {fileID: 8109105663846433571, guid: 228cbd92351003d42902c76ac51bfe84,
     type: 3}
   hasShield: 1
+  isShooter: 0

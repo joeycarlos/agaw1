@@ -44,12 +44,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 650585248567290340, guid: 9e09795e7a7109542bd5ccdc1207bea8, type: 3}
-  enemiesPerRow: 6
-  numberOfRows: 5
+  enemiesPerRow: 10
+  numberOfRows: 8
   horizontalSpacing: 1.8
-  verticalSpacing: 1.3
-  movementTimeInterval: 0.2
+  verticalSpacing: 1.5
+  movementTimeInterval: 1
   horizontalMoveDistance: 0.5
   verticalMoveDistance: 1
   numberOfShieldedRows: 2
   moveRightSwitchPending: 0
+  aggressionMovementTimePercentageDecrease: 0.3
+  aggressionFireIntervalPercentageDecrease: 0.3
+  numKillsToIncreaseAggression: 5
+  minShotTimeInterval: 5
+  maxShotTimeInterval: 10

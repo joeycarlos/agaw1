@@ -24,7 +24,7 @@ public class EnemyArmyManager : MonoBehaviour
     public float horizontalSpacing = 2.0f;
     public float verticalSpacing = 2.0f;
 
-    public float movementTimeInterval = 0.3f;
+    public float movementTimeInterval = 1.0f;
     public float horizontalMoveDistance = 0.5f;
     public float verticalMoveDistance = 1f;
     private float previousMovementTimeInterval;
@@ -34,13 +34,22 @@ public class EnemyArmyManager : MonoBehaviour
     private bool moveRight;
     public bool moveRightSwitchPending;
 
-    /*
-    [Range(0.0f, 1.0f)]
-    public float shieldSpawnPercentage = 0.5f;
-    */
-
-    public float currentEnemyCount { get; set; }
+    public int currentEnemyCount { get; set; }
     private bool enemiesHaveSpawned;
+
+    public int aggressionLevel { get; private set; }
+
+    [Range(0, 1)]
+    public float aggressionMovementMultiplier;
+    [Range(0, 1)]
+    public float aggressionShotRateMultiplier;
+
+    private int numEnemiesAtPreviousAggressionLevel;
+    public int numKillsToIncreaseAggression;
+
+    public float minShotTimeInterval = 5.0f;
+    public float maxShotTimeInterval = 10.0f;
+
 
     void Awake() {
         _instance = this;
@@ -61,6 +70,8 @@ public class EnemyArmyManager : MonoBehaviour
     void Update() {
         if (enemiesHaveSpawned == true && currentEnemyCount == 0)
             GameManager.Instance.LevelComplete();
+        if (enemiesHaveSpawned == true && currentEnemyCount == numEnemiesAtPreviousAggressionLevel - numKillsToIncreaseAggression)
+            IncreaseAggressionLevel();
     }
 
     void SpawnEnemies() {
@@ -74,6 +85,7 @@ public class EnemyArmyManager : MonoBehaviour
                 currentEnemyCount++;
             }
         }
+        numEnemiesAtPreviousAggressionLevel = currentEnemyCount;
         enemiesHaveSpawned = true;
     }
 
@@ -101,5 +113,20 @@ public class EnemyArmyManager : MonoBehaviour
         }
 
         transform.Translate(moveVector);
+    }
+
+    void IncreaseAggressionLevel() {
+        aggressionLevel++;
+
+        numEnemiesAtPreviousAggressionLevel = currentEnemyCount;
+
+        movementTimeInterval *= aggressionMovementMultiplier;
+        movementTimeInterval = Mathf.Clamp(movementTimeInterval, 0.05f, 3.0f);
+
+        minShotTimeInterval *= aggressionShotRateMultiplier;
+        Mathf.Clamp(minShotTimeInterval, 1.0f, 20.0f);
+
+        maxShotTimeInterval *= aggressionShotRateMultiplier;
+        Mathf.Clamp(maxShotTimeInterval, 1.0f, 20.0f);
     }
 }

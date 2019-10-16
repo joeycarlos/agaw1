@@ -6,8 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public GameObject projectile;
     public float projectileSpeed = 3.0f;
-    public float minShotTimeInterval = 3.0f;
-    public float maxShotTimeInterval = 20.0f;
     private float timeUntilNextShot;
 
     private BoxCollider2D bc;
@@ -16,7 +14,6 @@ public class Enemy : MonoBehaviour
     public bool hasShield;
     private GameObject iShield;
 
-    public bool isShooter;
     private int enemyLayer;
 
     void Awake() {
@@ -40,12 +37,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update() {
         ProcessShooting();
-
-        isShooter = IsShooter();
     }
 
     float GenerateShotTime() {
-        return Random.Range(minShotTimeInterval, maxShotTimeInterval);
+        return Random.Range(EnemyArmyManager.Instance.minShotTimeInterval, EnemyArmyManager.Instance.maxShotTimeInterval);
     }
 
     bool IsShooter() {
