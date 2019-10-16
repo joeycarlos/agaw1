@@ -12,8 +12,6 @@ public class Enemy : MonoBehaviour
 
     private BoxCollider2D bc;
 
-    private EnemyArmyManager enemyArmyManager;
-
     public GameObject enemyShield;
     public bool hasShield;
     private GameObject iShield;
@@ -26,8 +24,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         bc = GetComponent<BoxCollider2D>();
-
-        enemyArmyManager = GetComponentInParent<EnemyArmyManager>();
 
         timeUntilNextShot = GenerateShotTime();
     }
@@ -67,7 +63,7 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
 
         if (col.gameObject.layer == LayerMask.NameToLayer("Boundary"))
-            enemyArmyManager.moveRightSwitchPending = true;
+            EnemyArmyManager.Instance.moveRightSwitchPending = true;
         else if (col.gameObject.layer == LayerMask.NameToLayer("LowerBoundary"))
             GameManager.Instance.GameOver();
 
@@ -79,7 +75,7 @@ public class Enemy : MonoBehaviour
             hasShield = false;
         }
         else {
-            GameManager.Instance.currentEnemyCount--;
+            EnemyArmyManager.Instance.currentEnemyCount--;
             Destroy(gameObject);
             
         }

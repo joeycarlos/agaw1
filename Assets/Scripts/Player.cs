@@ -71,9 +71,3 @@ public class Player : MonoBehaviour
     }
 
 }
-
-/*
- *  - Player movement easing
- *  - Enemy group movement algorithm + implementation
- *  - 3 enemy types (basic, tank, shooter)
- */

@@ -31,21 +31,14 @@ public class GameManager : MonoBehaviour
 
     public int activeScene { get; private set; }
 
-    public int currentEnemyCount { get; set; }
     public int levelsCompleted { get; set; }
-
-    private EnemyArmyManager enemyArmyManager;
 
     private void Awake() {
         _instance = this;
         DontDestroyOnLoad(gameObject);
 
         activeScene = SceneManager.GetActiveScene().buildIndex;
-        currentEnemyCount = 0;
         levelsCompleted = 0;
-
-        if (activeScene >= (int)Scene.Level1)
-            enemyArmyManager = GameObject.FindGameObjectWithTag("EnemyArmyManager").GetComponent<EnemyArmyManager>();
     }
 
     void Update() {
@@ -53,7 +46,7 @@ public class GameManager : MonoBehaviour
 
         activeScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentEnemyCount == 0 && activeScene >= (int)Scene.Level1) SceneManager.LoadScene((int)Scene.Win);
+        // if (currentEnemyCount == 0 && activeScene >= (int)Scene.Level1) SceneManager.LoadScene((int)Scene.Win);
     }
 
     public void ProcessSceneLogic() {
