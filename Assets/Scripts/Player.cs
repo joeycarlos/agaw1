@@ -26,8 +26,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessMovementInput();
-        ProcessShooting();
+        if (GameManager.Instance.levelHasStarted == true) {
+            ProcessMovementInput();
+            ProcessShooting();
+        }
     }
 
     void ProcessMovementInput()

@@ -33,12 +33,16 @@ public class GameManager : MonoBehaviour
 
     public int levelsCompleted { get; set; }
 
+    public bool levelHasStarted { get; set; }
+
     private void Awake() {
         _instance = this;
         DontDestroyOnLoad(gameObject);
 
         activeScene = SceneManager.GetActiveScene().buildIndex;
         levelsCompleted = 0;
+
+        levelHasStarted = false;
     }
 
     void Update() {
@@ -75,6 +79,10 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             default:
+                if (Input.GetKeyUp(KeyCode.Space)) {
+                    levelHasStarted = true;
+                    EnemyArmyManager.Instance.StartBehaviour();
+                }
                 break;
 
         }
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void LevelComplete() {
         levelsCompleted++;
+        levelHasStarted = false;
         if (levelsCompleted < SceneManager.sceneCountInBuildSettings - 5) {
             SceneManager.LoadScene((int)Scene.LevelComplete); 
         } else {

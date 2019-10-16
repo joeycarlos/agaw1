@@ -63,7 +63,10 @@ public class EnemyArmyManager : MonoBehaviour
         currentEnemyCount = 0;
 
         SpawnEnemies();
+        
+    }
 
+    public void StartBehaviour() {
         InvokeRepeating("Move", movementTimeInterval, movementTimeInterval);
     }
 

@@ -36,7 +36,8 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        ProcessShooting();
+        if (GameManager.Instance.levelHasStarted)
+            ProcessShooting();
     }
 
     float GenerateShotTime() {
