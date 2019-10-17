@@ -10,8 +10,9 @@ public class MovementPickup : Pickup {
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             col.GetComponent<Player>().MoveSpeed += movementBonus;
-            GameManager.Instance.score += scoreValue;
-            Debug.Log(GameManager.Instance.score);
+            GameManager.Instance.Score += scoreValue;
+            Debug.Log(GameManager.Instance.Score);
+            GameManager.Instance.SpeedLevel++;
             Destroy(gameObject);
         }
     }

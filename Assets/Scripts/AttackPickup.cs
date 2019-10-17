@@ -13,8 +13,9 @@ public class AttackPickup : Pickup
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             col.GetComponent<Player>().ShotInterval -= shotIntervalDecrease;
             col.GetComponent<Player>().ProjectileSpeed += projectileSpeedIncrease;
-            GameManager.Instance.score += scoreValue;
-            Debug.Log(GameManager.Instance.score);
+            GameManager.Instance.Score += scoreValue;
+            GameManager.Instance.AttackLevel++;
+            Debug.Log(GameManager.Instance.Score);
             Destroy(gameObject);
         }
     }

@@ -35,7 +35,35 @@ public class GameManager : MonoBehaviour
 
     public bool levelHasStarted { get; set; }
 
-    public int score { get; set; }
+    private int _score;
+    public int Score {
+        get {
+            return _score;
+        }
+        set {
+            _score = value;
+        }
+    }
+
+    private int _attackLevel;
+    public int AttackLevel {
+        get {
+            return _attackLevel;
+        }
+        set {
+            _attackLevel = value;
+        }
+    }
+
+    private int _speedLevel;
+    public int SpeedLevel {
+        get {
+            return _speedLevel;
+        }
+        set {
+            _speedLevel = value;
+        }
+    }
 
     public float elapsedTimeThisLevel { get; set; }
 
@@ -54,9 +82,11 @@ public class GameManager : MonoBehaviour
 
         levelHasStarted = false;
 
-        score = 0;
+        Score = 0;
         elapsedTimeThisLevel = 0;
         elapsedTimeTotal = 0;
+        AttackLevel = 0;
+        SpeedLevel = 0;
         
         InitializePlayerData();
     }
@@ -147,7 +177,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame() {
         SceneManager.LoadScene((int)Scene.Splash);
         levelsCompleted = 0;
-        score = 0;
+        Score = 0;
         elapsedTimeTotal = 0;
         ResetPlayerData();
     }
