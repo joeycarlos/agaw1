@@ -144,5 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifetime: 8
-  shotIntervalDecrease: 0.05
-  projectileSpeedIncrease: 0.5
+  shotIntervalDecrease: 0.1
+  projectileSpeedIncrease: 1
+  scoreValue: 30
