@@ -143,12 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189632b2f259f3c42856f88e4ce7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 5
   horizontalDistanceLimit: 9
   projectile: {fileID: 1691363864066972858, guid: 9c2aa8c9741161c41b3223857d244959,
     type: 3}
-  shotInterval: 0.4
-  projectileSpeed: 15
+  shotInterval: 1
+  projectileSpeed: 5
 --- !u!1001 &6090670343085315761
 PrefabInstance:
   m_ObjectHideFlags: 0

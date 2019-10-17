@@ -10,13 +10,22 @@ public class EnemyBoss : MonoBehaviour
     public float speed = 3.0f;
     public bool leftToRight { get; set; }
 
+    public GameObject projectile;
+    public float projectileSpeed = 3.0f;
+    private float timeUntilNextShot;
+
+    private BoxCollider2D bc;
+
     // Start is called before the first frame update
     void Start() {
+        timeUntilNextShot = 3.0f;
+        bc = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update() {
         Move();
+        ProcessShooting();
     }
 
     void Move() {
@@ -29,6 +38,32 @@ public class EnemyBoss : MonoBehaviour
         transform.Translate(moveVector);
     }
 
+    void ProcessShooting() {
+        timeUntilNextShot = timeUntilNextShot - Time.deltaTime;
+
+        if (timeUntilNextShot <= 0) {
+            Shoot();
+            timeUntilNextShot = 3.0f;
+        }
+    }
+
+    void Shoot() {
+        Vector3 shotOriginOffset = new Vector3(0, -(bc.size.y / 2 + 0.5f), 0);
+        GameObject iProjectile = Instantiate(projectile, transform.position + shotOriginOffset, Quaternion.identity);
+        iProjectile.GetComponent<EnemyBossProjectile>().speed = projectileSpeed;
+    }
+
+    public void TakeDamage() {
+        EnemyBossSpawner.Instance.currentlySpawning = true;
+        if (Random.value > 0.5f) {
+            Instantiate(movementPickup, transform.position, Quaternion.identity);
+        }
+        else {
+            Instantiate(attackPickup, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Boundary")) {
             EnemyBossSpawner.Instance.currentlySpawning = true;
@@ -36,13 +71,5 @@ public class EnemyBoss : MonoBehaviour
         }
     }
 
-    public void TakeDamage() {
-        EnemyBossSpawner.Instance.currentlySpawning = true;
-        if (Random.value > 0.5f) {
-            Instantiate(movementPickup, transform.position, Quaternion.identity);
-        } else {
-            Instantiate(attackPickup, transform.position, Quaternion.identity);
-        }
-        Destroy(gameObject);
-    }
+
 }

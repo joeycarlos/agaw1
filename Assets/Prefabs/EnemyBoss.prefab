@@ -147,3 +147,6 @@ MonoBehaviour:
   attackPickup: {fileID: 1016072708573609067, guid: ed5fe5c5378c3614fb0b4b490d399935,
     type: 3}
   speed: 3
+  projectile: {fileID: 7143879228605244326, guid: 9a0f1c043940903409e6593cf4e78545,
+    type: 3}
+  projectileSpeed: 3
