@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     public int score { get; set; }
 
+    public float initialMoveSpeed = 5.0f;
+    public float initialShotInterval = 0.7f;
+    public float initialProjectileSpeed = 4.0f;
 
     private void Awake() {
         _instance = this;
@@ -48,6 +51,11 @@ public class GameManager : MonoBehaviour
         levelHasStarted = false;
 
         score = 0;
+        InitializePlayerData();
+    }
+
+    private void Start() {
+        
     }
 
     void Update() {
@@ -99,6 +107,8 @@ public class GameManager : MonoBehaviour
 
     public void LevelComplete() {
         EnemyArmyManager.Instance.ClearInvokes();
+        SavePlayerData();
+
         levelsCompleted++;
         levelHasStarted = false;
         if (levelsCompleted < SceneManager.sceneCountInBuildSettings - 5) {
@@ -106,7 +116,6 @@ public class GameManager : MonoBehaviour
         } else {
             Win();
         }
-
     }
 
     public void NextLevel() {
@@ -125,6 +134,31 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene((int)Scene.Splash);
         levelsCompleted = 0;
         score = 0;
+    }
+
+    public PlayerData playerData;
+
+    public void InitializePlayerData() {
+        if (playerData == null)
+            playerData = new PlayerData(initialMoveSpeed, initialShotInterval, initialProjectileSpeed);
+    }
+
+    public void SavePlayerData() {
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerData._moveSpeed = player.MoveSpeed;
+        playerData._shotInterval = player.ShotInterval;
+        playerData._projectileSpeed = player.ProjectileSpeed;
+    }
+
+    public void LoadPlayerData() {
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.MoveSpeed = playerData._moveSpeed;
+        player.ShotInterval = playerData._shotInterval;
+        player.ProjectileSpeed = playerData._projectileSpeed;
+    }
+
+    public void ResetPlayerData() {
+        playerData = null;
     }
 
 }

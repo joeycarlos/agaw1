@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
     private float moveSpeed = 5.0f;
 
     public float MoveSpeed {
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour
 
     public GameObject projectile;
 
-    [SerializeField]
     private float shotInterval = 0.7f;
     public float ShotInterval {
         get {
@@ -34,7 +32,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    [SerializeField]
     private float projectileSpeed = 4.0f;
     public float ProjectileSpeed {
         get {
@@ -55,6 +52,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         timeSinceShot = Mathf.Infinity;
+
+        GameManager.Instance.LoadPlayerData();
     }
 
     // Update is called once per frame
