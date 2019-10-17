@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
         levelsCompleted = 0;
         score = 0;
         elapsedTimeTotal = 0;
+        ResetPlayerData();
     }
 
     public PlayerData playerData;
