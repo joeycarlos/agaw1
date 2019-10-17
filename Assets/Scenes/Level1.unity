@@ -286,41 +286,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: enemiesPerRow
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: numberOfRows
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: numKillsToIncreaseAggression
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: aggressionMovementTimePercentageMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: aggressionFireIntervalPercentageMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: aggressionMovementMultiplier
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
-        type: 3}
-      propertyPath: aggressionShotRateMultiplier
-      value: 0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ecd8617aac41429bd62877f840120, type: 3}
 --- !u!1001 &1175959640885816931
@@ -463,16 +428,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274791415018870782, guid: 991e553436b388a4fa94136713060840,
-        type: 3}
-      propertyPath: spawnMinInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274791415018870782, guid: 991e553436b388a4fa94136713060840,
-        type: 3}
-      propertyPath: spawnMaxInterval
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991e553436b388a4fa94136713060840, type: 3}
@@ -641,21 +596,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
-        type: 3}
-      propertyPath: shotInterval
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8001890887215670467, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc,
-        type: 3}
-      propertyPath: projectileSpeed
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a099bd75fc1d74fb553ac3cc8ccfcc, type: 3}

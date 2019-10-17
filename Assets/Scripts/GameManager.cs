@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
 
     public bool levelHasStarted { get; set; }
 
+    public int score { get; set; }
+
+
     private void Awake() {
         _instance = this;
         DontDestroyOnLoad(gameObject);
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
         levelsCompleted = 0;
 
         levelHasStarted = false;
+
+        score = 0;
     }
 
     void Update() {
@@ -119,6 +124,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame() {
         SceneManager.LoadScene((int)Scene.Splash);
         levelsCompleted = 0;
+        score = 0;
     }
 
 }

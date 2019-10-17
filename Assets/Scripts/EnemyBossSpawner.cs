@@ -34,6 +34,8 @@ public class EnemyBossSpawner : MonoBehaviour
     public float minTimeBetweenBursts = 3.0f;
     public float maxTimeBetweenBursts = 5.0f;
 
+    public int scoreValue = 30;
+
     void Awake() {
         _instance = this;
     }

@@ -52,6 +52,8 @@ public class EnemyArmyManager : MonoBehaviour
 
     public float projectileSpeed = 3.0f;
 
+    public int scoreValue = 10;
+
 
     void Awake() {
         _instance = this;

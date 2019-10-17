@@ -45,5 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBoss: {fileID: 3919741943294304260, guid: 381aff2d9f1ef8d4dae25c084cc48f3e,
     type: 3}
-  spawnMinInterval: 7
-  spawnMaxInterval: 15
+  spawnMinInterval: 1
+  spawnMaxInterval: 1.5
+  speed: 5
+  projectileSpeed: 5
+  burstShotSize: 7
+  burstShotInterval: 0.1
+  minTimeBetweenBursts: 3
+  maxTimeBetweenBursts: 5
+  scoreValue: 50
