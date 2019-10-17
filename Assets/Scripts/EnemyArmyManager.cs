@@ -50,6 +50,8 @@ public class EnemyArmyManager : MonoBehaviour
     public float minShotTimeInterval = 5.0f;
     public float maxShotTimeInterval = 10.0f;
 
+    public float projectileSpeed = 3.0f;
+
 
     void Awake() {
         _instance = this;
@@ -87,9 +89,10 @@ public class EnemyArmyManager : MonoBehaviour
             for (int j = 0; j < numberOfRows; j++) {
                 Vector3 offset = new Vector3(i * horizontalSpacing, -j * verticalSpacing, 0);
                 GameObject iEnemy = Instantiate(enemy1, transform.position + offset, Quaternion.identity, this.transform);
+                Enemy iEnemyComponent = iEnemy.GetComponent<Enemy>();
                 if (j >= numberOfRows-numberOfShieldedRows)
-                    iEnemy.GetComponent<Enemy>().hasShield = true;
-                iEnemy.GetComponent<Enemy>().Init();
+                    iEnemyComponent.hasShield = true;
+                iEnemyComponent.Init();
                 currentEnemyCount++;
             }
         }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject projectile;
-    public float projectileSpeed = 3.0f;
     private float timeUntilNextShot;
 
     private BoxCollider2D bc;
@@ -66,7 +65,7 @@ public class Enemy : MonoBehaviour
     void Shoot() {
         Vector3 shotOriginOffset = new Vector3(0, -(bc.size.y/2 + 0.5f), 0);
         GameObject iProjectile = Instantiate(projectile, transform.position + shotOriginOffset, Quaternion.identity);
-        iProjectile.GetComponent<EnemyProjectile>().speed = projectileSpeed;
+        iProjectile.GetComponent<EnemyProjectile>().speed = EnemyArmyManager.Instance.projectileSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
