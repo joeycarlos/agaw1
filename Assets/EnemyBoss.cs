@@ -7,19 +7,31 @@ public class EnemyBoss : MonoBehaviour
     public GameObject movementPickup;
     public GameObject attackPickup;
 
-    public float speed = 3.0f;
+    public float speed = 2.0f;
     public bool leftToRight { get; set; }
 
     public GameObject projectile;
     public float projectileSpeed = 3.0f;
     private float timeUntilNextShot;
 
+    public int burstShotSize = 5;
+    public float burstShotInterval = 0.1f;
+    public int burstShotsLeft;
+    public float minTimeBetweenBursts = 3.0f;
+    public float maxTimeBetweenBursts = 5.0f;
+
+    private float timeUntilNextBurst;
+
     private BoxCollider2D bc;
 
     // Start is called before the first frame update
     void Start() {
-        timeUntilNextShot = 3.0f;
         bc = GetComponent<BoxCollider2D>();
+
+        timeUntilNextShot = burstShotInterval;
+        timeUntilNextBurst = Random.Range(minTimeBetweenBursts, maxTimeBetweenBursts);
+        burstShotsLeft = 0;
+        InvokeRepeating("InitiateBurst", timeUntilNextBurst / 2.0f, timeUntilNextBurst);
     }
 
     // Update is called once per frame
@@ -38,12 +50,17 @@ public class EnemyBoss : MonoBehaviour
         transform.Translate(moveVector);
     }
 
+    void InitiateBurst() {
+        burstShotsLeft = burstShotSize;
+    }
+
     void ProcessShooting() {
         timeUntilNextShot = timeUntilNextShot - Time.deltaTime;
 
-        if (timeUntilNextShot <= 0) {
+        if (timeUntilNextShot <= 0 && burstShotsLeft > 0) {
             Shoot();
-            timeUntilNextShot = 3.0f;
+            timeUntilNextShot = burstShotInterval;
+            burstShotsLeft--;
         }
     }
 
