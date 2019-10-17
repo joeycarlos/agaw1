@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
 
     public int score { get; set; }
 
+    public float elapsedTimeThisLevel { get; set; }
+
+    public float elapsedTimeTotal { get; set; }
+
     public float initialMoveSpeed = 5.0f;
     public float initialShotInterval = 0.7f;
     public float initialProjectileSpeed = 4.0f;
@@ -51,6 +55,9 @@ public class GameManager : MonoBehaviour
         levelHasStarted = false;
 
         score = 0;
+        elapsedTimeThisLevel = 0;
+        elapsedTimeTotal = 0;
+        
         InitializePlayerData();
     }
 
@@ -92,6 +99,9 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             default:
+                if (levelHasStarted) {
+                    elapsedTimeThisLevel += Time.deltaTime;
+                }
                 break;
 
         }
@@ -108,6 +118,10 @@ public class GameManager : MonoBehaviour
     public void LevelComplete() {
         EnemyArmyManager.Instance.ClearInvokes();
         SavePlayerData();
+        elapsedTimeTotal += elapsedTimeThisLevel;
+        Debug.Log("ELAPSED TIME THIS LEVEL: " + elapsedTimeThisLevel);
+        Debug.Log("ELAPSED TIME TOTAL: " + elapsedTimeTotal);
+        elapsedTimeThisLevel = 0;
 
         levelsCompleted++;
         levelHasStarted = false;
@@ -134,6 +148,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene((int)Scene.Splash);
         levelsCompleted = 0;
         score = 0;
+        elapsedTimeTotal = 0;
     }
 
     public PlayerData playerData;
