@@ -11,7 +11,6 @@ public class EnemyBossSpawner : MonoBehaviour
             if (_instance == null) {
                 GameObject go = new GameObject("EnemyBossSpawner");
                 go.AddComponent<EnemyArmyManager>();
-                // go.transform.position = new Vector3(-8, 5, 0);
             }
 
             return _instance;
@@ -27,6 +26,13 @@ public class EnemyBossSpawner : MonoBehaviour
 
     private float horizontalSpawnDistance;
     private int boundaryLayer;
+
+    public float speed;
+    public float projectileSpeed;
+    public int burstShotSize = 5;
+    public float burstShotInterval = 0.1f;
+    public float minTimeBetweenBursts = 3.0f;
+    public float maxTimeBetweenBursts = 5.0f;
 
     void Awake() {
         _instance = this;
@@ -69,9 +75,16 @@ public class EnemyBossSpawner : MonoBehaviour
             spawnLocation = new Vector3(horizontalSpawnDistance - 2.0f, transform.position.y, 0);
 
         GameObject iEnemyBoss = Instantiate(enemyBoss, spawnLocation, Quaternion.identity);
-        iEnemyBoss.GetComponent<EnemyBoss>().leftToRight = leftToRight;
+        EnemyBoss iEnemyBossComponent = iEnemyBoss.GetComponent<EnemyBoss>();
+        iEnemyBossComponent.leftToRight = leftToRight;
+        iEnemyBossComponent.speed = speed;
+        iEnemyBossComponent.projectileSpeed = projectileSpeed;
+        iEnemyBossComponent.burstShotSize = burstShotSize;
+        iEnemyBossComponent.burstShotInterval = burstShotInterval;
+        iEnemyBossComponent.minTimeBetweenBursts = minTimeBetweenBursts;
+        iEnemyBossComponent.maxTimeBetweenBursts = maxTimeBetweenBursts;
 
-        timeUntilSpawn = Random.Range(spawnMinInterval, spawnMaxInterval);
+    timeUntilSpawn = Random.Range(spawnMinInterval, spawnMaxInterval);
         currentlySpawning = false;
     }
 }
