@@ -11,7 +11,6 @@ public class MovementPickup : Pickup {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             col.GetComponent<Player>().MoveSpeed += movementBonus;
             GameManager.Instance.Score += scoreValue;
-            Debug.Log(GameManager.Instance.Score);
             GameManager.Instance.SpeedLevel++;
             Destroy(gameObject);
         }

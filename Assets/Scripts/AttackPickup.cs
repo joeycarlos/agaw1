@@ -15,7 +15,6 @@ public class AttackPickup : Pickup
             col.GetComponent<Player>().ProjectileSpeed += projectileSpeedIncrease;
             GameManager.Instance.Score += scoreValue;
             GameManager.Instance.AttackLevel++;
-            Debug.Log(GameManager.Instance.Score);
             Destroy(gameObject);
         }
     }

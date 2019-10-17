@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayUIManager : MonoBehaviour
-{
+public class GameplayUIManager : MonoBehaviour {
     private static GameplayUIManager _instance;
 
     // Complete list of UI elements
@@ -30,9 +29,22 @@ public class GameplayUIManager : MonoBehaviour
     }
 
     void Update() {
+        UpdateTime();
+    }
+
+    public void UpdateScore() {
         scoreText.text = "SCORE: " + GameManager.Instance.Score;
-        elapsedTime.text = "TIME: " + GameManager.Instance.elapsedTimeThisLevel.ToString("F0");
+    }
+
+    public void UpdateTime() {
+        elapsedTime.text = "TIME: " + GameManager.Instance.elapsedTimeThisLevel.ToString("F2");
+    }
+
+    public void UpdateAttackLevel() {
         attackLevel.text = "ATK LVL: " + GameManager.Instance.AttackLevel;
+    }
+
+    public void UpdateSpeedLevel() {
         speedLevel.text = "SPD LVL: " + GameManager.Instance.SpeedLevel;
     }
 }

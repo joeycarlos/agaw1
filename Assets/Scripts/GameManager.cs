@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         }
         set {
             _score = value;
+            GameplayUIManager.Instance.UpdateScore();
         }
     }
 
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         }
         set {
             _attackLevel = value;
+            GameplayUIManager.Instance.UpdateAttackLevel();
         }
     }
 
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
         }
         set {
             _speedLevel = value;
+            GameplayUIManager.Instance.UpdateSpeedLevel();
         }
     }
 
