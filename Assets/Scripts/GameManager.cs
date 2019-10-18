@@ -42,7 +42,9 @@ public class GameManager : MonoBehaviour
         }
         set {
             _score = value;
-            GameplayUIManager.Instance.UpdateScore();
+            if (GameplayUIManager.Instance != null) {
+                GameplayUIManager.Instance.UpdateScore();
+            }
         }
     }
 
@@ -53,7 +55,9 @@ public class GameManager : MonoBehaviour
         }
         set {
             _attackLevel = value;
-            GameplayUIManager.Instance.UpdateAttackLevel();
+            if (GameplayUIManager.Instance != null) {
+                GameplayUIManager.Instance.UpdateAttackLevel();
+            }
             if (_attackLevel != 0)
                 GameplayUIManager.Instance.AttackUpAnnouncement();
         }
@@ -66,7 +70,9 @@ public class GameManager : MonoBehaviour
         }
         set {
             _speedLevel = value;
-            GameplayUIManager.Instance.UpdateSpeedLevel();
+            if (GameplayUIManager.Instance != null) {
+                GameplayUIManager.Instance.UpdateSpeedLevel();
+            }
             if (_speedLevel != 0)
                 GameplayUIManager.Instance.SpeedUpAnnouncement();
         }

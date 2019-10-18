@@ -8,6 +8,7 @@ public class GameplayUIManager : MonoBehaviour {
 
     // Complete list of UI elements
     public Text titleText;
+    public Text levelText;
     public Text scoreText;
     public Text elapsedTime;
     public Text attackLevel;
@@ -22,10 +23,12 @@ public class GameplayUIManager : MonoBehaviour {
 
     public static GameplayUIManager Instance {
         get {
+            /*
             if (_instance == null) {
                 GameObject go = new GameObject("GameplayUIManager");
                 go.AddComponent<GameplayUIManager>();
             }
+            */
 
             return _instance;
         }
@@ -36,7 +39,12 @@ public class GameplayUIManager : MonoBehaviour {
     }
 
     void Update() {
+        UpdateLevel();
         UpdateTime();
+    }
+
+    public void UpdateLevel() {
+        levelText.text = "LEVEL: " + (GameManager.Instance.levelsCompleted + 1).ToString();
     }
 
     public void UpdateScore() {
