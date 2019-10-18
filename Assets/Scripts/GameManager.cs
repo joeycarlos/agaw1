@@ -156,6 +156,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
+        levelHasStarted = false;
         SceneManager.LoadScene((int)Scene.GameOver);
     }
 
