@@ -80,6 +80,7 @@ public class EnemyBoss : MonoBehaviour
         }
         GameManager.Instance.Score += EnemyBossSpawner.Instance.scoreValue;
         GameplayUIManager.Instance.ScoreNotification(EnemyBossSpawner.Instance.scoreValue, transform.position, new Vector3(0, 0, 0));
+        EnemyBossSpawner.Instance.bossesLeft--;
         Destroy(gameObject);
     }
 

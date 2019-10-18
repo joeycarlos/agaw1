@@ -36,16 +36,20 @@ public class EnemyBossSpawner : MonoBehaviour
 
     public int scoreValue = 30;
 
+    public int maxNumOfBosses = 3;
+    public int bossesLeft;
+
     void Awake() {
         _instance = this;
     }
 
         // Start is called before the first frame update
    void Start() {
+        bossesLeft = maxNumOfBosses;
         boundaryLayer = LayerMask.GetMask("Boundary");
         timeUntilSpawn = Random.Range(spawnMinInterval, spawnMaxInterval);
         currentlySpawning = true;
-        transform.position = new Vector3(0, 9.0f, 0);
+        transform.position = new Vector3(0, 8.0f, 0);
         CalculateSpawnDistance();
     }
 
@@ -53,7 +57,7 @@ public class EnemyBossSpawner : MonoBehaviour
     void Update()
     {
         if (currentlySpawning && GameManager.Instance.levelHasStarted == true) {
-            if (timeUntilSpawn <= 0)
+            if (timeUntilSpawn <= 0 && bossesLeft > 0)
                 SpawnEnemyBoss();
             timeUntilSpawn -= Time.deltaTime;
         }
