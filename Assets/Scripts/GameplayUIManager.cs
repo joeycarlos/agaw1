@@ -38,6 +38,12 @@ public class GameplayUIManager : MonoBehaviour {
         _instance = this;
     }
 
+    void Start() {
+        UpdateAttackLevel();
+        UpdateScore();
+        UpdateSpeedLevel();
+    }
+
     void Update() {
         UpdateLevel();
         UpdateTime();

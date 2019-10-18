@@ -206,14 +206,16 @@ public class GameManager : MonoBehaviour
         levelsCompleted = 0;
         Score = 0;
         elapsedTimeTotal = 0;
-        ResetPlayerData();
+        elapsedTimeThisLevel = 0;
+        InitializePlayerData();
     }
 
     public PlayerData playerData;
 
     public void InitializePlayerData() {
-        if (playerData == null)
-            playerData = new PlayerData(initialMoveSpeed, initialShotInterval, initialProjectileSpeed);
+        _attackLevel = 0;
+        _speedLevel = 0;
+        playerData = new PlayerData(initialMoveSpeed, initialShotInterval, initialProjectileSpeed);
     }
 
     public void SavePlayerData() {
