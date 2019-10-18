@@ -237,9 +237,6 @@ public class GameManager : MonoBehaviour
 
     public void CalculateTimeBonus() {
         timeBonus = (int)Mathf.Clamp((expectedLevelTime - elapsedTimeThisLevel) * 10.0f, 0, 10000.0f);
-        Debug.Log("Expected time: " + expectedLevelTime);
-        Debug.Log("Actual Level Time: " + elapsedTimeThisLevel);
-        Debug.Log("Time Bonus: " + timeBonus);
         scoreWithBonus = Score + timeBonus;
     }
 
