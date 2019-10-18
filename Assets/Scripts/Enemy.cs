@@ -83,6 +83,7 @@ public class Enemy : MonoBehaviour
         else {
             EnemyArmyManager.Instance.currentEnemyCount--;
             GameManager.Instance.Score += EnemyArmyManager.Instance.scoreValue;
+            GameplayUIManager.Instance.ScoreNotification(EnemyArmyManager.Instance.scoreValue, transform.position, new Vector3(0, 0, 0));
             Destroy(gameObject);
         }
     }

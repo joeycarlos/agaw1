@@ -79,6 +79,7 @@ public class EnemyBoss : MonoBehaviour
             Instantiate(attackPickup, transform.position, Quaternion.identity);
         }
         GameManager.Instance.Score += EnemyBossSpawner.Instance.scoreValue;
+        GameplayUIManager.Instance.ScoreNotification(EnemyBossSpawner.Instance.scoreValue, transform.position, new Vector3(0, 0, 0));
         Destroy(gameObject);
     }
 

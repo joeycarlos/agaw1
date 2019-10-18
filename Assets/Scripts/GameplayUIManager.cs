@@ -16,6 +16,8 @@ public class GameplayUIManager : MonoBehaviour {
     public Text attackUpAnnouncement;
     public Text speedUpAnnouncement;
 
+    public Canvas scoreNotification;
+
     public static GameplayUIManager Instance {
         get {
             if (_instance == null) {
@@ -54,20 +56,35 @@ public class GameplayUIManager : MonoBehaviour {
     public void AttackUpAnnouncement() {
         Text iText = Instantiate(attackUpAnnouncement, transform, false);
         iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
-        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 5.0f));
-        Destroy(iText, 1.0f);
+        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 10.0f));
+        Destroy(iText, 2.0f);
     }
 
     public void SpeedUpAnnouncement() {
         Text iText = Instantiate(speedUpAnnouncement, transform, false);
         iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
-        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 5.0f));
-        Destroy(iText, 1.0f);
+        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 10.0f));
+        Destroy(iText, 2.0f);
+    }
+
+    public void ScoreNotification(int score, Vector3 location, Vector3 offset) {
+        Canvas iCanvas = Instantiate(scoreNotification, location, Quaternion.identity);
+        iCanvas.GetComponentInChildren<Text>().text = "+" + score.ToString();
+        StartCoroutine(NotificationAnimation(iCanvas, 0.5f, 5.0f));
+        Destroy(iCanvas.gameObject, 0.5f);
     }
 
     IEnumerator AnnouncementAnimation(Text iText, float lifetime, float speed) {
-        for (float t = 0; t < lifetime; t += Time.deltaTime) {
+        for (float t = 0; t < lifetime - 0.01f; t += Time.deltaTime) {
             iText.rectTransform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
+
+            yield return null;
+        }
+    }
+
+    IEnumerator NotificationAnimation(Canvas iCanvas, float lifetime, float speed) {
+        for (float t = 0; t < lifetime - 0.01f; t += Time.deltaTime) {
+            iCanvas.transform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
 
             yield return null;
         }

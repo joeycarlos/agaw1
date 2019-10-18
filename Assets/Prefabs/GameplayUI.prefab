@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Attack Lvl:'
+  m_Text: 'ATK LVL: '
 --- !u!1 &4900993617539322473
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +356,8 @@ MonoBehaviour:
     type: 3}
   speedUpAnnouncement: {fileID: 3538060507791949165, guid: 10733020b40b44249bec39163ed22a4d,
     type: 3}
+  scoreNotification: {fileID: 7809445661636361092, guid: bd799c21267940e43bbfc4d83083c193,
+    type: 3}
 --- !u!1 &4900993619128699399
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,4 +511,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Speed Lvl:'
+  m_Text: 'SPD LVL: '

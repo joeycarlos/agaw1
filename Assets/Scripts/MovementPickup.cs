@@ -12,6 +12,7 @@ public class MovementPickup : Pickup {
             col.GetComponent<Player>().MoveSpeed += movementBonus;
             GameManager.Instance.Score += scoreValue;
             GameManager.Instance.SpeedLevel++;
+            GameplayUIManager.Instance.ScoreNotification(scoreValue, transform.position, new Vector3(0, 0, 0));
             Destroy(gameObject);
         }
     }
