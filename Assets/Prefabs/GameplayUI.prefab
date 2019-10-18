@@ -352,6 +352,10 @@ MonoBehaviour:
   elapsedTime: {fileID: 7248909396675749718}
   attackLevel: {fileID: 5232031872603775748}
   speedLevel: {fileID: 7218696413212394023}
+  attackUpAnnouncement: {fileID: 229480285185542881, guid: a766d19a1d649a34cb4c62f7154acb26,
+    type: 3}
+  speedUpAnnouncement: {fileID: 3538060507791949165, guid: 10733020b40b44249bec39163ed22a4d,
+    type: 3}
 --- !u!1 &4900993619128699399
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9427508, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

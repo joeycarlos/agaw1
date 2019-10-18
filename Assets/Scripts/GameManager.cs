@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         set {
             _attackLevel = value;
             GameplayUIManager.Instance.UpdateAttackLevel();
+            if (_attackLevel != 0)
+                GameplayUIManager.Instance.AttackUpAnnouncement();
         }
     }
 
@@ -65,6 +67,8 @@ public class GameManager : MonoBehaviour
         set {
             _speedLevel = value;
             GameplayUIManager.Instance.UpdateSpeedLevel();
+            if (_speedLevel != 0)
+                GameplayUIManager.Instance.SpeedUpAnnouncement();
         }
     }
 

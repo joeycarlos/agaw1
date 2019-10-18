@@ -13,6 +13,9 @@ public class GameplayUIManager : MonoBehaviour {
     public Text attackLevel;
     public Text speedLevel;
 
+    public Text attackUpAnnouncement;
+    public Text speedUpAnnouncement;
+
     public static GameplayUIManager Instance {
         get {
             if (_instance == null) {
@@ -46,5 +49,27 @@ public class GameplayUIManager : MonoBehaviour {
 
     public void UpdateSpeedLevel() {
         speedLevel.text = "SPD LVL: " + GameManager.Instance.SpeedLevel;
+    }
+
+    public void AttackUpAnnouncement() {
+        Text iText = Instantiate(attackUpAnnouncement, transform, false);
+        iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
+        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 5.0f));
+        Destroy(iText, 1.0f);
+    }
+
+    public void SpeedUpAnnouncement() {
+        Text iText = Instantiate(speedUpAnnouncement, transform, false);
+        iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
+        StartCoroutine(AnnouncementAnimation(iText, 2.0f, 5.0f));
+        Destroy(iText, 1.0f);
+    }
+
+    IEnumerator AnnouncementAnimation(Text iText, float lifetime, float speed) {
+        for (float t = 0; t < lifetime; t += Time.deltaTime) {
+            iText.rectTransform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
+
+            yield return null;
+        }
     }
 }

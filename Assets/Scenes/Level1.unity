@@ -614,50 +614,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4900993617539322475, guid: 87133d7f97ffad6468b215b9abcc30c4,
+    - target: {fileID: 4900993619128699401, guid: 87133d7f97ffad6468b215b9abcc30c4,
         type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 55
+      propertyPath: m_Color.r
+      value: 0.9427508
       objectReference: {fileID: 0}
     - target: {fileID: 4900993619128699401, guid: 87133d7f97ffad6468b215b9abcc30c4,
         type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 60
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4900993619128699401, guid: 87133d7f97ffad6468b215b9abcc30c4,
         type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7248909396675749718, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_FontStyle
+      propertyPath: m_Color.b
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7248909396675749718, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232031872603775748, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232031872603775748, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218696413212394023, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218696413212394023, guid: 87133d7f97ffad6468b215b9abcc30c4,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87133d7f97ffad6468b215b9abcc30c4, type: 3}
