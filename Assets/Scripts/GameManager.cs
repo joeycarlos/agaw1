@@ -172,18 +172,20 @@ public class GameManager : MonoBehaviour
 
         levelsCompleted++;
         levelHasStarted = false;
-        if (levelsCompleted < SceneManager.sceneCountInBuildSettings - 5) {
-            SceneManager.LoadScene((int)Scene.LevelComplete); 
-        } else {
-            Win();
-        }
+        SceneManager.LoadScene((int)Scene.LevelComplete); 
 
     }
 
     public void NextLevel() {
         Score += (int)timeBonus;
         elapsedTimeThisLevel = 0;
-        SceneManager.LoadScene(levelsCompleted + 5);
+
+        if (levelsCompleted == SceneManager.sceneCountInBuildSettings - 5) {
+            Win();
+        } else {
+            SceneManager.LoadScene(levelsCompleted + 5);
+        }
+
     }
 
     public void StartMainGame() {
