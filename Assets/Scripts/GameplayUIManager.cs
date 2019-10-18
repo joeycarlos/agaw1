@@ -57,34 +57,43 @@ public class GameplayUIManager : MonoBehaviour {
         Text iText = Instantiate(attackUpAnnouncement, transform, false);
         iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
         StartCoroutine(AnnouncementAnimation(iText, 2.0f, 10.0f));
-        Destroy(iText, 2.0f);
+        Destroy(iText.gameObject, 2.0f);
     }
 
     public void SpeedUpAnnouncement() {
         Text iText = Instantiate(speedUpAnnouncement, transform, false);
         iText.rectTransform.anchoredPosition = new Vector2(0, -200.0f);
         StartCoroutine(AnnouncementAnimation(iText, 2.0f, 10.0f));
-        Destroy(iText, 2.0f);
+        Destroy(iText.gameObject, 2.0f);
     }
 
     public void ScoreNotification(int score, Vector3 location, Vector3 offset) {
         Canvas iCanvas = Instantiate(scoreNotification, location, Quaternion.identity);
         iCanvas.GetComponentInChildren<Text>().text = "+" + score.ToString();
-        StartCoroutine(NotificationAnimation(iCanvas, 0.5f, 5.0f));
-        Destroy(iCanvas.gameObject, 0.5f);
+        StartCoroutine(NotificationAnimation(iCanvas, 0.75f, 3.0f));
+        Destroy(iCanvas.gameObject, 0.75f);
     }
 
     IEnumerator AnnouncementAnimation(Text iText, float lifetime, float speed) {
         for (float t = 0; t < lifetime - 0.01f; t += Time.deltaTime) {
             iText.rectTransform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
+            Color color = iText.color;
+            color.a -= Time.deltaTime / lifetime;
+            iText.color = color;
 
             yield return null;
         }
     }
 
     IEnumerator NotificationAnimation(Canvas iCanvas, float lifetime, float speed) {
-        for (float t = 0; t < lifetime - 0.01f; t += Time.deltaTime) {
+        for (float t = 0; t < lifetime - 0.05f; t += Time.deltaTime) {
             iCanvas.transform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
+
+            Text iText = iCanvas.GetComponentInChildren<Text>();
+
+            Color color = iText.color;
+            color.a -= Time.deltaTime / lifetime;
+            iText.color = color;
 
             yield return null;
         }
