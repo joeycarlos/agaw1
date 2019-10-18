@@ -167,13 +167,8 @@ public class GameManager : MonoBehaviour
         EnemyArmyManager.Instance.ClearInvokes();
         SavePlayerData();
         elapsedTimeTotal += elapsedTimeThisLevel;
-        Debug.Log("ELAPSED TIME THIS LEVEL: " + elapsedTimeThisLevel);
-        Debug.Log("ELAPSED TIME TOTAL: " + elapsedTimeTotal);
         
         CalculateTimeBonus();
-        Debug.Log("SCORE BEFORE BONUS: " + Score);
-        Debug.Log("TIME BONUS: " + timeBonus);
-        Debug.Log("CORRECT SCORE SUM :" + Score + " " + timeBonus);
 
         levelsCompleted++;
         levelHasStarted = false;
@@ -187,8 +182,6 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel() {
         Score += (int)timeBonus;
-
-        Debug.Log("SCORE AFTER LEVEL LOAD: " + Score);
         elapsedTimeThisLevel = 0;
         SceneManager.LoadScene(levelsCompleted + 5);
     }
