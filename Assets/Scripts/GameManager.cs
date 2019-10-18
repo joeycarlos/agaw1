@@ -86,6 +86,10 @@ public class GameManager : MonoBehaviour
     public float initialShotInterval = 0.7f;
     public float initialProjectileSpeed = 4.0f;
 
+    private float expectedLevelTime;
+    public int timeBonus;
+    public int scoreWithBonus;
+
     private void Awake() {
         _instance = this;
         DontDestroyOnLoad(gameObject);
@@ -126,8 +130,10 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case 2:
-                if (Input.GetKeyDown(KeyCode.Space)) {
+                if (Input.GetKeyDown(KeyCode.Space) && LevelCompleteUI.Instance.doneAnimation == true) {
                     NextLevel();
+                } else if (Input.GetKeyDown(KeyCode.Space) && LevelCompleteUI.Instance.doneAnimation == false) {
+                    LevelCompleteUI.Instance.SkipAnimation();
                 }
                 break;
             case 3:
@@ -163,7 +169,11 @@ public class GameManager : MonoBehaviour
         elapsedTimeTotal += elapsedTimeThisLevel;
         Debug.Log("ELAPSED TIME THIS LEVEL: " + elapsedTimeThisLevel);
         Debug.Log("ELAPSED TIME TOTAL: " + elapsedTimeTotal);
-        elapsedTimeThisLevel = 0;
+        
+        CalculateTimeBonus();
+        Debug.Log("SCORE BEFORE BONUS: " + Score);
+        Debug.Log("TIME BONUS: " + timeBonus);
+        Debug.Log("CORRECT SCORE SUM :" + Score + " " + timeBonus);
 
         levelsCompleted++;
         levelHasStarted = false;
@@ -172,9 +182,14 @@ public class GameManager : MonoBehaviour
         } else {
             Win();
         }
+
     }
 
     public void NextLevel() {
+        Score += (int)timeBonus;
+
+        Debug.Log("SCORE AFTER LEVEL LOAD: " + Score);
+        elapsedTimeThisLevel = 0;
         SceneManager.LoadScene(levelsCompleted + 5);
     }
 
@@ -222,6 +237,15 @@ public class GameManager : MonoBehaviour
     public void StartGameplay() {
         levelHasStarted = true;
         GameplayUIManager.Instance.RemoveLevelStartMessage();
+        expectedLevelTime = EnemyArmyManager.Instance.expectedTime;
+    }
+
+    public void CalculateTimeBonus() {
+        timeBonus = (int)Mathf.Clamp((expectedLevelTime - elapsedTimeThisLevel) * 10.0f, 0, 10000.0f);
+        Debug.Log("Expected time: " + expectedLevelTime);
+        Debug.Log("Actual Level Time: " + elapsedTimeThisLevel);
+        Debug.Log("Time Bonus: " + timeBonus);
+        scoreWithBonus = Score + timeBonus;
     }
 
 }

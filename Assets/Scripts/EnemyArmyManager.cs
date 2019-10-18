@@ -54,6 +54,8 @@ public class EnemyArmyManager : MonoBehaviour
 
     public int scoreValue = 10;
 
+    public float expectedTime = 40.0f;
+
 
     void Awake() {
         _instance = this;
