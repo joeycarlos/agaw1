@@ -76,7 +76,7 @@ public class EnemyArmyManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyUp(KeyCode.Space) && GameManager.Instance.levelHasStarted == false) {
-            GameManager.Instance.levelHasStarted = true;
+            GameManager.Instance.StartGameplay();
             StartBehaviour();
         }
 

@@ -18,6 +18,8 @@ public class GameplayUIManager : MonoBehaviour {
 
     public Canvas scoreNotification;
 
+    public Text levelStartText;
+
     public static GameplayUIManager Instance {
         get {
             if (_instance == null) {
@@ -97,5 +99,9 @@ public class GameplayUIManager : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    public void RemoveLevelStartMessage() {
+        Destroy(levelStartText);
     }
 }

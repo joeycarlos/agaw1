@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        
     }
 
     void Update() {
@@ -212,6 +211,11 @@ public class GameManager : MonoBehaviour
 
     public void ResetPlayerData() {
         playerData = null;
+    }
+
+    public void StartGameplay() {
+        levelHasStarted = true;
+        GameplayUIManager.Instance.RemoveLevelStartMessage();
     }
 
 }
