@@ -360,12 +360,37 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: enemiesPerRow
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: numberOfRows
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: horizontalSpacing
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: verticalSpacing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: horizontalMoveDistance
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: numberOfShieldedRows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: movementTimeInterval
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ecd8617aac41429bd62877f840120, type: 3}
@@ -463,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 501098370976510279, guid: 991e553436b388a4fa94136713060840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 501098370976510279, guid: 991e553436b388a4fa94136713060840,
         type: 3}
