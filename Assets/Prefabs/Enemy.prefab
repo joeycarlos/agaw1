@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 650585248567290340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.8, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc948220c1ab9174b8e276dc39dadd1f, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: df2069e98913fd44a8ce23197115eb6e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.012489796, y: 0.025619984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7743664, y: 1.9479437}
   m_EdgeRadius: 0
 --- !u!50 &944555788843202581
 Rigidbody2D:
@@ -144,10 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4839014588427291414, guid: 621529dcc2b1757499670d1571bea48e,
     type: 3}
-  projectileSpeed: 3
-  minShotTimeInterval: 3
-  maxShotTimeInterval: 4
   enemyShield: {fileID: 8109105663846433571, guid: 228cbd92351003d42902c76ac51bfe84,
     type: 3}
   hasShield: 1
-  isShooter: 0
+  enemyDeathEffect: {fileID: 4352182327268824662, guid: 8e05273deb1583041a9fb4a9cf91c03a,
+    type: 3}

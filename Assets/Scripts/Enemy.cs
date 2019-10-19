@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public bool hasShield;
     private GameObject iShield;
 
+    public GameObject enemyDeathEffect;
+
     private int enemyLayer;
 
     void Awake() {
@@ -84,6 +86,8 @@ public class Enemy : MonoBehaviour
             EnemyArmyManager.Instance.currentEnemyCount--;
             GameManager.Instance.Score += EnemyArmyManager.Instance.scoreValue;
             GameplayUIManager.Instance.ScoreNotification(EnemyArmyManager.Instance.scoreValue, transform.position, new Vector3(0, 0, 0));
+            GameObject iDeathEffect = Instantiate(enemyDeathEffect, transform.position, Quaternion.identity);
+            Destroy(iDeathEffect, 1.0f);
             Destroy(gameObject);
         }
     }
