@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject enemyDeathEffect;
 
+    public GameObject enemyShieldBreakEffect;
+
     private int enemyLayer;
 
     private SpriteRenderer sr;
@@ -87,6 +89,8 @@ public class Enemy : MonoBehaviour
         if (hasShield == true) {
             Destroy(iShield);
             sr.sprite = defaultSprite;
+            GameObject iShieldBreakEffect = Instantiate(enemyShieldBreakEffect, transform.position, Quaternion.identity);
+            Destroy(iShieldBreakEffect, 1.0f);
             hasShield = false;
         }
         else {
