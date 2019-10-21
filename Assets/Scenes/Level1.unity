@@ -385,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: numberOfShieldedRows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
