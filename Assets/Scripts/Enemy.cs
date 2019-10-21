@@ -17,9 +17,14 @@ public class Enemy : MonoBehaviour
 
     private int enemyLayer;
 
+    private SpriteRenderer sr;
+    public Sprite defaultSprite;
+    public Sprite shieldedSprite;
+
     void Awake() {
         hasShield = false;
         enemyLayer = LayerMask.GetMask("Enemy");
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -32,6 +37,7 @@ public class Enemy : MonoBehaviour
     public void Init() {
         if (hasShield == true) {
             iShield = Instantiate(enemyShield, transform.position, Quaternion.identity, this.transform);
+            sr.sprite = shieldedSprite;
         }
     }
 
@@ -80,6 +86,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage() {
         if (hasShield == true) {
             Destroy(iShield);
+            sr.sprite = defaultSprite;
             hasShield = false;
         }
         else {
