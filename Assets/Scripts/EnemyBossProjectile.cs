@@ -26,7 +26,7 @@ public class EnemyBossProjectile : MonoBehaviour
 
     private void Move() {
         Vector3 moveVector;
-        moveVector = new Vector3(0.2f*Mathf.Sin(timeAlive*10.0f), -speed * Time.deltaTime, 0);
+        moveVector = new Vector3(0.05f*Mathf.Sin(timeAlive*10.0f), -speed * Time.deltaTime, 0);
         transform.Translate(moveVector);
     }
 
