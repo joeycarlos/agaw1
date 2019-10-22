@@ -24,6 +24,8 @@ public class EnemyBoss : MonoBehaviour
 
     private BoxCollider2D bc;
 
+    public GameObject enemyDeathEffect;
+
     // Start is called before the first frame update
     void Start() {
         bc = GetComponent<BoxCollider2D>();
@@ -81,12 +83,15 @@ public class EnemyBoss : MonoBehaviour
         GameManager.Instance.Score += EnemyBossSpawner.Instance.scoreValue;
         GameplayUIManager.Instance.ScoreNotification(EnemyBossSpawner.Instance.scoreValue, transform.position, new Vector3(0, 0, 0));
         EnemyBossSpawner.Instance.bossesLeft--;
+        GameObject iDeathEffect = Instantiate(enemyDeathEffect, transform.position, Quaternion.identity);
+        Destroy(iDeathEffect, 1.0f);
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Boundary")) {
             EnemyBossSpawner.Instance.currentlySpawning = true;
+
             Destroy(gameObject);
         }
     }
