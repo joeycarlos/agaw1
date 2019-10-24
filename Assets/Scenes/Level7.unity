@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 4900993618679252662, guid: 87133d7f97ffad6468b215b9abcc30c4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4900993618679252662, guid: 87133d7f97ffad6468b215b9abcc30c4,
         type: 3}
@@ -855,6 +855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxTimeBetweenBursts
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274791415018870782, guid: 991e553436b388a4fa94136713060840,
+        type: 3}
+      propertyPath: maxNumOfBosses
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991e553436b388a4fa94136713060840, type: 3}

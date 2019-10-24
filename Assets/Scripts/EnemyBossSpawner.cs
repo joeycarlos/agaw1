@@ -51,7 +51,7 @@ public class EnemyBossSpawner : MonoBehaviour
         timeUntilSpawn = Random.Range(spawnMinInterval, spawnMaxInterval);
         currentlySpawning = true;
         transform.position = new Vector3(0, 10.0f, 0);
-        pickupsLeft = 3;
+        pickupsLeft = maxNumOfBosses;
         CalculateSpawnDistance();
     }
 
