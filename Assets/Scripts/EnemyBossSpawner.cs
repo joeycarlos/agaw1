@@ -50,7 +50,7 @@ public class EnemyBossSpawner : MonoBehaviour
         boundaryLayer = LayerMask.GetMask("Boundary");
         timeUntilSpawn = Random.Range(spawnMinInterval, spawnMaxInterval);
         currentlySpawning = true;
-        transform.position = new Vector3(0, 8.0f, 0);
+        transform.position = new Vector3(0, 10.0f, 0);
         pickupsLeft = 3;
         CalculateSpawnDistance();
     }
