@@ -11,6 +11,8 @@ public class EnemyBossProjectile : MonoBehaviour
     private Rigidbody2D rb;
     private float timeAlive;
 
+    public GameObject landHitEffect;
+
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +36,11 @@ public class EnemyBossProjectile : MonoBehaviour
 
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             GameManager.Instance.GameOver();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("PickupDestroy")) {
+            GameObject iLandHitEffect = Instantiate(landHitEffect, transform.position, Quaternion.identity);
+            Destroy(iLandHitEffect, 1.0f);
+            Destroy(gameObject);
         }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7143879228605244324}
   - component: {fileID: 7143879228605244327}
   - component: {fileID: -8404847650451642433}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemyBossProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +146,8 @@ MonoBehaviour:
   upDirection: 0
   speed: 3
   lifetime: 15
+  landHitEffect: {fileID: 4176675101927865571, guid: 6de6a45300d5ec440ab8dc18207cf82a,
+    type: 3}
 --- !u!95 &-8404847650451642433
 Animator:
   serializedVersion: 3
