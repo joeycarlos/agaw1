@@ -16,6 +16,10 @@ public class AttackPickup : Pickup
             GameManager.Instance.Score += scoreValue;
             GameManager.Instance.AttackLevel++;
             GameplayUIManager.Instance.ScoreNotification(scoreValue, transform.position, new Vector3(0, 0, 0));
+            EnemyBossSpawner.Instance.pickupsLeft--;
+            Destroy(gameObject);
+        } else if (col.gameObject.layer == LayerMask.NameToLayer("PickupDestroy")) {
+            EnemyBossSpawner.Instance.pickupsLeft--;
             Destroy(gameObject);
         }
     }

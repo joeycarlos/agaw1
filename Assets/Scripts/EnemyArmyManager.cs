@@ -56,7 +56,6 @@ public class EnemyArmyManager : MonoBehaviour
 
     public float expectedTime = 40.0f;
 
-
     void Awake() {
         _instance = this;
     }
@@ -82,7 +81,7 @@ public class EnemyArmyManager : MonoBehaviour
             StartBehaviour();
         }
 
-        if (enemiesHaveSpawned == true && currentEnemyCount <= 0 && EnemyBossSpawner.Instance.bossesLeft == 0)
+        if (enemiesHaveSpawned == true && currentEnemyCount <= 0 && EnemyBossSpawner.Instance.bossesLeft == 0 && EnemyBossSpawner.Instance.pickupsLeft <= 0)
             GameManager.Instance.LevelComplete();
         if (enemiesHaveSpawned == true && currentEnemyCount == numEnemiesAtPreviousAggressionLevel - numKillsToIncreaseAggression)
             IncreaseAggressionLevel();
