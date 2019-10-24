@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4840120287465681232}
   - component: {fileID: 963175647337689553}
   - component: {fileID: 1465007255}
+  - component: {fileID: 7549972016134715331}
   m_Layer: 0
   m_Name: MovementPickup
   m_TagString: Untagged
@@ -146,3 +147,22 @@ MonoBehaviour:
   lifetime: 8
   movementBonus: 2
   scoreValue: 30
+--- !u!95 &7549972016134715331
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462368949499311352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 740b0255bdd71c447bb19662a3993dd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

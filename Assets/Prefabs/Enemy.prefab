@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 650585248567290344}
   - component: {fileID: 944555788843202581}
   - component: {fileID: 7387412849571634125}
+  - component: {fileID: 164616958}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -153,3 +154,22 @@ MonoBehaviour:
     type: 3}
   defaultSprite: {fileID: 21300000, guid: 25fa65fb8ffeb1f42be3d1af2af4e593, type: 3}
   shieldedSprite: {fileID: 21300000, guid: d7c84b2489bde474facc63a9eb1c8926, type: 3}
+--- !u!95 &164616958
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650585248567290340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cebf50d89d2b03458b5a90795cbf8a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

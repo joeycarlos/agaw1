@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9117150886544293930}
   - component: {fileID: 6600857522455608579}
   - component: {fileID: 6169970502890366197}
+  - component: {fileID: 4461807192327931669}
   m_Layer: 0
   m_Name: AttackPickup
   m_TagString: Untagged
@@ -147,3 +148,22 @@ MonoBehaviour:
   shotIntervalDecrease: 0.1
   projectileSpeedIncrease: 1
   scoreValue: 30
+--- !u!95 &4461807192327931669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016072708573609067}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61c6084c52bd33f4cb1215b7e924ba12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

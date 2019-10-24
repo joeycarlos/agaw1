@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7143879228605244325}
   - component: {fileID: 7143879228605244324}
   - component: {fileID: 7143879228605244327}
+  - component: {fileID: -8404847650451642433}
   m_Layer: 0
   m_Name: EnemyBossProjectile
   m_TagString: Untagged
@@ -145,3 +146,22 @@ MonoBehaviour:
   upDirection: 0
   speed: 3
   lifetime: 15
+--- !u!95 &-8404847650451642433
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143879228605244326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2647ab9b316264e4a9f76b26a4d06e8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
