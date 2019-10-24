@@ -457,7 +457,7 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: enemiesPerRow
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
@@ -467,7 +467,7 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: horizontalSpacing
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
@@ -503,6 +503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: projectileSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
+        type: 3}
+      propertyPath: verticalSpacing
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ecd8617aac41429bd62877f840120, type: 3}

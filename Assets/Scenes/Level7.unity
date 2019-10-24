@@ -457,22 +457,22 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: enemiesPerRow
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: numberOfRows
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: horizontalSpacing
-      value: 1.5
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: verticalSpacing
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
@@ -487,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 910919066353089283, guid: 5f7ecd8617aac41429bd62877f840120,
         type: 3}
       propertyPath: aggressionMovementMultiplier
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ecd8617aac41429bd62877f840120, type: 3}

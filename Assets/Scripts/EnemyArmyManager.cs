@@ -82,7 +82,7 @@ public class EnemyArmyManager : MonoBehaviour
             StartBehaviour();
         }
 
-        if (enemiesHaveSpawned == true && currentEnemyCount <= 0)
+        if (enemiesHaveSpawned == true && currentEnemyCount <= 0 && EnemyBossSpawner.Instance.bossesLeft == 0)
             GameManager.Instance.LevelComplete();
         if (enemiesHaveSpawned == true && currentEnemyCount == numEnemiesAtPreviousAggressionLevel - numKillsToIncreaseAggression)
             IncreaseAggressionLevel();
