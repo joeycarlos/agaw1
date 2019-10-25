@@ -148,6 +148,8 @@ MonoBehaviour:
   shotIntervalDecrease: 0.1
   projectileSpeedIncrease: 1
   scoreValue: 30
+  attackPickupEffect: {fileID: 3660512289519827356, guid: c8c80d8909aa02e40860ddfbe87005ec,
+    type: 3}
 --- !u!95 &4461807192327931669
 Animator:
   serializedVersion: 3

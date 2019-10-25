@@ -9,6 +9,8 @@ public class AttackPickup : Pickup
 
     public int scoreValue = 30;
 
+    public GameObject attackPickupEffect;
+
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
             col.GetComponent<Player>().ShotInterval -= shotIntervalDecrease;
@@ -17,6 +19,8 @@ public class AttackPickup : Pickup
             GameManager.Instance.AttackLevel++;
             GameplayUIManager.Instance.ScoreNotification(scoreValue, transform.position, new Vector3(0, 0, 0));
             EnemyBossSpawner.Instance.pickupsLeft--;
+            GameObject iAttackPickupEffect = Instantiate(attackPickupEffect, transform.position, Quaternion.identity);
+            Destroy(iAttackPickupEffect, 1.0f);
             Destroy(gameObject);
         } else if (col.gameObject.layer == LayerMask.NameToLayer("PickupDestroy")) {
             EnemyBossSpawner.Instance.pickupsLeft--;

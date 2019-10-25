@@ -147,6 +147,8 @@ MonoBehaviour:
   lifetime: 8
   movementBonus: 2
   scoreValue: 30
+  movementPickupEffect: {fileID: 7258771721059167530, guid: 84098b14ef802994a9842c37dc2cba61,
+    type: 3}
 --- !u!95 &7549972016134715331
 Animator:
   serializedVersion: 3

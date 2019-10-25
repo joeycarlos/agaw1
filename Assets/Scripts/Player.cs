@@ -45,10 +45,15 @@ public class Player : MonoBehaviour
 
     private float timeSinceShot;
 
+    public AudioClip shotAudio;
+
+    private AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
 
         timeSinceShot = Mathf.Infinity;
@@ -99,6 +104,7 @@ public class Player : MonoBehaviour
     {
         GameObject iProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         iProjectile.GetComponent<Projectile>().speed = projectileSpeed;
+        audioSource.PlayOneShot(shotAudio, 0.2f);
     }
 
 }
