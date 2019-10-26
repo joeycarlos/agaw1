@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"A Game A Week": Week 1'
+  m_Text: '"A Game A Week Challenge": Week 1'
 --- !u!1 &3842788350512446419
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oct. 20, 2019
+  m_Text: Oct. 26, 2019
 --- !u!1 &4537764921795674988
 GameObject:
   m_ObjectHideFlags: 0
